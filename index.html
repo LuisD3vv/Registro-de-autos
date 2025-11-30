@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Lissandro" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styel.css" />
+    <title>Registro de automoviles</title>
+  </head>
+  <body>
+
+    <main class="general">
+      <!-- campo 1 -->
+      <section class="campo">
+        <div class="campo_venta_compra">
+          <div class="eleccion_salida">
+            <details class="autos">
+              <summary>Seleccionar Auto</summary>
+              <div class="centrar">
+              <!-- Datos generados al momento de cargar el html -->
+              </div>
+            </details>
+            <button class="boton" id="abrirdialogauto">AGREGAR AUTO</button>
+            <dialog id="carroNuevo">
+
+              <p>Ingresa los datos del nuevo Auto</p>
+              <div class="newCar">
+              <div class="campo_newcar">
+              <label for="cname">Marca </label>
+              <input type="text" name="" id="cname" autocomplete="off">
+              </div>
+              <div class="campo_newcar"><label for="cmodel">Modelo</label>
+              <input type="text" name="" id="cmodel" autocomplete="off"></div>
+              <div class="campo_newcar">
+              <label for="cColor">Color</label>
+              <input type="text" name="" id="cColor" autocomplete="off">
+              </div>
+              <div class="campo_newcar">
+              <label for="cdate">Año</label>
+              <input type="text" name="" id="cdate" autocomplete="off">
+              </div>
+
+              <div class="campo_newcar">
+              <label for="cprice">Precio</label>
+              <input type="text" name="" id="cprice" autocomplete="off">
+              </div>
+              <div class="campo_newcar"><label for="cprop">*En proceso</label>
+              <input type="text" name="" id="cprop" autocomplete="off">
+            </div>
+              <p >*si el auto se encuentra en tramites actualmente, ya sea de normalizacion de documentos o matricula, en caso contrario colocar el nombre actual del propietario.</p>
+            <div class="botones_newcar">
+              <button id="agregarNuevoCoche" onclick="agregarAuto()">ACEPTAR</button>
+              <button  id="cerrardialognuevo">CERRAR</button>
+            </div>
+            </div>
+            </dialog>
+          </div>
+          <div class="eleccion">
+            <p class="eleccion_auto_actual">--</p>
+            <label for="propietario"> Ingresa el nuevo propietario</label>
+            <input type="text" id="propietario" autocomplete="off" />
+            <div class="bg_buton_propietario">
+              <button class="boton_propietario boton" id="nuevo_titular">
+                ACEPTAR
+              </button>
+              <p class="eleccion_info">* Necesario solo si el auto se vendio.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- campo 2 -->
+      <section class="campo">
+        <details class="Detalle">
+          <summary class="detalle_summary">Ver mas</summary>
+          <div class="contenedor_disponibles">
+          <div class="autos_disponibles">
+            <h2>Datos del coche <span>Actual</span></h2>
+            <div class="detalles_coche">
+              <p>marca: <span class="automarca"></span></p>
+              <p>modelo: <span class="automodelo"></span></p>
+              <p>color: <span class="autocolor"></span></p>
+              <p>año: <span class="autoanno"></span></p>
+              <p>Precio: <span class="autoprecio"></span></p>
+              <p>propietario: <span class="autoprop"></span></p>
+            </div>
+          </div>
+        </div>
+      </details>
+      
+      </section>
+      <!-- campo 3 -->
+      <section class="campo">
+        <div class="bg-boton-encender">
+          <button class="boton" id="encender">Encender Auto Actual</button>
+          
+          <button id="verAuto" class="boton">Ver Todos los Autos</button>
+          <dialog id="miDialog">
+            <header><h2>Coches Actualmente en Stock</h2>
+            </header>
+              <div class="mostrarLosAutos">
+              </div>
+              </header>
+              <button id="CerrarDlg">CERRAR</button>
+          </dialog>
+        </div>
+      </section>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
