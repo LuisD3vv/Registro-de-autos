@@ -1,7 +1,12 @@
+/* Autor 
+  Lissandro AG 2025
+*/
+
 :root {
   --fuente: "Open Sans", sans-serif;
 }
 
+/* RESET */
 * {
   padding: 0;
   margin: 0;
@@ -11,12 +16,6 @@
 *::after {
   box-sizing: inherit;
 }
-.no-margin {
-  margin: 0;
-}
-.no-padding {
-  padding: 0;
-}
 html {
   box-sizing: border-box;
   font-size: 62.5%;
@@ -24,9 +23,12 @@ html {
 
 body {
   font-family: var(--fuente);
-  background-color: #222;
+  background-color: #222222;
+  height: auto;
+  overflow-y: auto;
 }
 
+/* TIPOGRAFÍA */
 h1 {
   text-align: center;
   color: #eeee;
@@ -38,6 +40,8 @@ h2 {
 p {
   font-size: 1.7rem;
 }
+
+/* TITULO */
 .title {
   width: min(50rem, 95%);
   display: flex;
@@ -48,31 +52,36 @@ p {
   padding: 1rem;
   object-fit: cover;
 }
+
+/* CONTENEDOR GENERAL */
 .general {
+  z-index: 100;
   display: flex;
   flex-direction: column;
-  margin: 3rem auto;
+  margin: 4rem auto;
   background-color: #eeee;
   width: min(60rem, 95%);
-  height: max-content;
-  border-radius: 5rem;
+  min-height: 60rem;
+  border-radius: 3rem;
   padding: 1rem;
   gap: 1rem;
 }
+
+/* CAMPOS */
 .campo {
   background-color: rgba(0, 0, 0, 0.63);
   box-shadow: 0 3px 2px 2px #222;
-  flex: 1 1 auto;
-  height: 100%;
+  flex: 1 1;
   padding: 1rem;
 }
 .campo:nth-child(1) {
-  border-top-right-radius: 4rem ;
-  border-top-left-radius:4rem ;
+  border-top-right-radius: 3rem;
+  border-top-left-radius: 3rem;
 }
 .campo:nth-child(3) {
-  border-bottom-right-radius:4rem ;
-  border-bottom-left-radius:4rem ;}
+  border-bottom-right-radius: 3rem;
+  border-bottom-left-radius: 3rem;
+}
 
 .campo_venta_compra {
   display: flex;
@@ -80,34 +89,39 @@ p {
   width: 100%;
   gap: 1rem;
 }
+
 .eleccion,
 .eleccion_salida {
   width: 50%;
   border-radius: 0.5rem;
 }
+
 .eleccion {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
   font-family: var(--fuente);
-  background-color: #22222271;
+  background-color: #2222222c;
   padding: 1rem;
   transition: all ease 0.3s;
   padding-bottom: 2rem;
   height: max-content;
 }
+
 .eleccion_auto_actual {
+  font-weight: bold;
   overflow-x: hidden;
   font-size: 1.5rem;
-  color: #e6e6e6;
-  margin-bottom: -2rem;
-  background-color: #222;
-  padding: .5rem
-;width: 100%;
-text-align: center;
-border-radius: .5rem;
+  color: #4f116e;
+  text-shadow: 1px 1px 1px #222;
+  margin-bottom: -1rem;
+  background-color: #2222226b;
+  padding: 1rem;
+  width: 100%;
+  text-align: center;
 }
+
 .eleccion label {
   margin-top: 1rem;
   font-weight: bold;
@@ -127,67 +141,72 @@ border-radius: .5rem;
   font-size: 1.5rem;
   outline: unset;
 }
-.eleccion input:focus{ 
+.eleccion input:focus {
   transition: all ease-in 0.3s;
   background-color: rgba(0, 128, 0, 0.158);
-border-radius: .5rem;
-
+  border-radius: 0.5rem;
 }
 
 .eleccion_salida {
   display: flex;
   flex-direction: column;
-
   padding: 1rem;
   background-color: #2222222c;
 }
+
+/* DETAILS */
 summary {
-  color:#F2DCDC;
-  background-color: #0000003f;
-  padding:.5rem;
+  color: #f2dcdc;
+  height: max-content;
   cursor: pointer;
   font-weight: bold;
-  font-size: 1.8rem;
-  width:100%;
-  text-align:center;
-  border-radius:.5rem;
+  font-size: 1.4rem;
+  width: 100%;
+  text-align: center;
+  border-radius: 0.5rem;
+  
+  padding: .5rem;
 }
+
 summary::marker {
-color: green;
+  color: green;
 }
 details {
-  display:flex;
-  flex-direction:column;
-  gap:1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   padding: 1rem;
   transition: all ease-out 0.3s;
   width:100%;
-  padding:1rem;
 }
 details:nth-child(2) {
-  border-top: .3rem double grey;
+  border-top: 0.3rem double grey;
 }
 details::-webkit-scrollbar {
   display: none;
 }
 details[open] summary {
-margin-top:1rem;
+  margin-top: 1rem;
 }
 details[open] {
   overflow-y: auto;
   transition: all ease-in 0.3s;
-  border-radius: 0.5rem;  
+  border-radius: 0.5rem;
+  background-color: rgb(240, 128, 128);
+  margin-bottom: 1rem;
 }
-
-/* quitar el scrollbal pero creo que solo en chrome */
 
 .centrar {
-  display:flex;
-  flex-direction:column;
-  gap:1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 .caracteristicaAuto {
-  width:90%;
+  width: 90%;
+}
+.caracteristicaAuto:focus {
+  outline: 2px solid rgb(0, 255, 13);
+  outline-offset: 2px;
 }
 details[open] .caracteristicaAuto {
   transition: all ease 0.3s;
@@ -197,26 +216,25 @@ details[open] .caracteristicaAuto {
   padding: 1rem;
   font-weight: bold;
 }
-
 details[open] .caracteristicaAuto:hover {
-  box-shadow:1px 1px 1px 1px #222;
+  box-shadow: 0 1px 1px 1px #222;
   background-color: lightblue;
   cursor: pointer;
   transform: scale(0.99);
-  border-radius:.5rem;
-  color:#222;
+  border-radius: 0.5rem;
+  color: #222;
 }
 details[open] .caracteristicaAuto:nth-child(odd):hover {
-    background-color: lightcoral;
-    color:#222;
+  background-color: rgb(128, 240, 130);
+  color: #222;
 }
 details[open]:nth-child(3) {
-  height:max-content;
+  height: max-content;
 }
+
 .boton_propietario {
   width: 100%;
   padding: 1rem;
-  
 }
 
 .bg_buton_propietario {
@@ -226,27 +244,26 @@ details[open]:nth-child(3) {
   height: auto;
   width: 90%;
 }
-/* segunda seccion */
 
+/* segunda seccion */
 .detalle_summary {
-padding: 1rem;
-width: 95%;
-margin: 0 auto;
+  padding: 1rem;
+  width: 95%;
+  margin: 0 auto;
+  background-color: #222;
 }
 .contenedor_disponibles {
   display: flex;
   flex-direction: row;
-  align-items:center;
+  align-items: center;
   gap: 1rem;
   height: 100%;
   width: 100%;
-  
 }
 .autos_disponibles h2 {
   text-align: center;
   font-size: 1.6rem;
   margin-bottom: 1rem;
-  
 }
 .autos_disponibles {
   display: flex;
@@ -281,10 +298,12 @@ margin: 0 auto;
   border: medium;
   cursor: pointer;
   font-weight: bold;
-  color: #222;
+  color: #ddd;
   font-size: 1.5rem;
-  border-radius: .5rem;
-  outline: none;
+  border-radius: 0.5rem;
+  outline: 1px solid grey;
+  background-color: #222;
+
 }
 .boton:focus {
   outline: 2px solid green;
@@ -298,9 +317,11 @@ margin: 0 auto;
   height: 100%;
   gap: 1rem;
   padding: 1rem;
-
 }
-
+#carroNuevo {
+  margin-top: 4rem;
+  height: 70rem;
+}
 #encender,
 #verAuto {
   flex: 1 1 25rem;
@@ -309,71 +330,90 @@ margin: 0 auto;
 
 #encender:active,
 #verAuto:active {
-  background-color: greenyellow;
-} 
+  background-color: rgba(172, 255, 47, 0.366);
+}
 .boton_encender:active {
   transform: scale(0.95);
 }
 
 .boton:active {
-  transform: scale(0.95);  box-shadow: unset;
+  transform: scale(0.95);
+  box-shadow: unset;
 }
 
-@media (max-width:40rem) {
+/* MEDIA QUERY */
+@media (max-width: 40rem) {
   dialog {
-    margin-top: 5.5rem;
+    height: auto;
+    max-height: 90vh;
+    overflow-y: auto;
   }
-    .general {
+  body {
+    height: auto;
+    overflow-y: auto;
+  }
+  .general {
     margin-top: 1rem;
-    border-radius: .5rem;
-    }
-    .campo {
-      border-radius: 1rem;
-    }
-    .campo_venta_compra {
+    border-radius: 0.5rem;
+    height: max-content;
+  }
+  .campo,
+  .campo:nth-child(1),
+  .campo:nth-child(3) {
+    border-radius: 1rem;
+  }
+  .campo_venta_compra {
     flex-direction: column;
     height: 100%;
-    } 
-    .eleccion_salida,.eleccion {
+  }
+  .eleccion_salida,
+  .eleccion {
     width: 100%;
-    }
-    .eleccion {
+  }
+  .eleccion {
     justify-content: center;
     background-color: #2222224f;
     height: 30rem;
-    }
-    .eleccion input {
+  }
+  .eleccion input {
     padding: 2rem;
-    }
-    .boton_propietario {
+  }
+  .boton_propietario {
     margin-top: 1.5rem;
     width: 90%;
-    padding: 2.5rem;
-    }
-    #encender,
-    #verAuto{
+    padding: 1.5rem;
+  }
+  #encender,
+  #verAuto {
     height: 5rem;
-    }  
-    #carroNuevo  {
-      width: 95%;
-    }
+  }
+  .campo_newcar {
+    flex-direction: column;
+  }
+  .newCar {
+    margin: 0 auto;
+    width: auto;
+  }
+  #carroNuevo {
+    width: 90%;
+  }
 }
-.detalles ,.eleccion_info{
+
+.detalles,
+.eleccion_info {
   color: #eeee;
   font-size: 1rem;
   font-weight: bold;
   text-align: center;
   background-color: #eeeeee17;
-  padding: .5rem;
+  padding: 0.5rem;
   margin-top: 1rem;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
-
-
 
 /* Dialog */
 .mostrarLosAutos {
-  overflow-y:auto;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -381,26 +421,27 @@ margin: 0 auto;
   padding: 1rem;
   background-color: #2222222c;
   height: 100%;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
 .mostrarLosAutos_campo {
   width: 95%;
-  background-color:#222;
+  background-color: #222;
   box-shadow: 0 2px 1px 1px #e6e6e6;
   font-size: 1.5rem;
   cursor: pointer;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   color: #e6e6e6;
 }
 .mostrarLosAutos_campo:hover {
-  transition: transform ease-out .2s;
+  transition: transform ease-out 0.2s;
   transform: scale(1.05);
 }
-#CerrarDlg,#cerrardialognuevo {
+#CerrarDlg,
+#cerrardialognuevo {
   text-transform: uppercase;
   padding: 1rem;
   cursor: pointer;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
   border: medium;
   color: #eee;
   background-color: #007bff;
@@ -414,33 +455,33 @@ margin: 0 auto;
   transform: scale(0.95);
 }
 
-
 dialog {
   flex-direction: column;
   justify-content: space-between;
   overflow-y: auto;
   gap: 1rem;
   position: fixed; /* Fija la posición relativa a la ventana del navegador */
-  top: 40%;        /* Mueve el borde superior al 50% de la altura de la ventana */
-  left: 50%;       /* Mueve el borde izquierdo al 50% del ancho de la ventana */
+  top: 40%; /* Mueve el borde superior al 50% de la altura de la ventana */
+  left: 50%; /* Mueve el borde izquierdo al 50% del ancho de la ventana */
   transform: translate(-50%, -50%); /* Ajusta el elemento hacia atrás la mitad de su propio ancho/alto */
   /* Otros estilos */
-  padding:2rem;
+  margin: auto;
+  padding: 2rem;
   background-color: grey;
   border: none;
   z-index: 100;
-  width: min(50rem,95%);
-  height: 50rem;
-  border-radius: .5rem;
+  width: min(50rem, 95%);
+  border-radius: 0.5rem;
 }
-#miDialog::-webkit-scrollbar,.mostrarLosAutos::-webkit-scrollbar {
+#miDialog::-webkit-scrollbar,
+.mostrarLosAutos::-webkit-scrollbar {
   display: none;
 }
 dialog header {
   letter-spacing: 1px;
   text-align: center;
   padding: 1.5rem;
-  background-color:rgb(185, 181, 181);
+  background-color: rgb(185, 181, 181);
   color: #222;
 }
 
@@ -484,36 +525,34 @@ dialog::backdrop {
   transition: backdrop-filter 0.3s ease-out;
 }
 #abrirdialogauto {
-  margin:0 auto;
+  margin: 0 auto;
   width: 95%;
-  color: #222;
+  color: #ddd;
   padding: 1rem;
 }
-#agregarNuevoCoche{
+#abrirdialogauto:focus {
+  outline: 2px solid rgb(255, 0, 0);
+  outline-offset: 2px;
+}
+#agregarNuevoCoche {
   font-family: var(--fuente);
   padding: 1rem;
   font-weight: bold;
   border: medium;
   cursor: pointer;
   width: 100%;
-  border-radius: .5rem;
+  border-radius: 0.5rem;
 }
-#agregarNuevoCoche:active{
-  transform: scale(.95);
-  border-radius: .5rem;
-}
-
-#carroNuevo {
-height: max-content;
+#agregarNuevoCoche:active {
+  transform: scale(0.95);
+  border-radius: 0.5rem;
 }
 
 .newCar {
-  margin:0 auto;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 1rem;
-  padding: 1rem;
+  gap: 1.5rem;
 }
 .botones_newcar {
   width: 100%;
@@ -521,26 +560,26 @@ height: max-content;
   gap: 1rem;
 }
 .campo_newcar {
+  flex: 1;
   display: flex;
   place-content: center;
-  background-color: #22222271;
-  gap:1rem;
+  background-color: #2223;
+  border-radius: 0.5rem;
   padding: 1rem;
-  flex: 1 1;
-border-radius: .5rem;
+  box-shadow: 0 2px 1px 1px #222;
+  gap: 1.5rem;
 }
 .newCar label {
-  box-shadow: 1px 2px 1px 1px #222;
   width: 100%;
-  text-align:center;
+  text-align: center;
   padding: 1rem;
   font-weight: bold;
   font-size: 1.5rem;
-  background-color: lightblue;
-  border-top-left-radius: 1rem;
-  border-bottom-left-radius: 1rem;
+  background-color: rgba(242, 207, 9, 0.958);
+  box-shadow: 0 2px 1px 1px #222;
+  border-radius: .5rem;
+  color: #222;
 }
-
 .newCar input {
   font-family: var(--fuente);
   font-weight: bold;
@@ -548,32 +587,35 @@ border-radius: .5rem;
   padding: 1rem;
   text-align: center;
   font-size: 1.5rem;
-  background-color: rgba(211, 211, 211, 0.719);
+  background-color: grey;
   border: medium;
-  border-top-right-radius: 1rem;
-  border-bottom-right-radius: 1rem;
   outline: none;
 }
-#carroNuevo p {
-  font-size: 1.1rem !important;
+.carroNuevo_parrafo {
+  font-size: 1.5rem;
+}
+.declarative {
+  font-size: 1rem !important;
 }
 .newCar input:focus {
-  transition: all ease .3s;
-  background-color: transparent;
-  outline: 3px solid indianred;
-  outline-offset:  .2rem;
-    color: #e6e6e6;
-
+  transition: all ease-in 0.1s;
+  background-color:rgba(144, 238, 144, 0.315);
+  outline: 3px solid rgb(255, 255, 255);
+  outline-offset: 0.3rem;
+  color: #e6e6e6;
+  border-radius: 0.5rem;
 }
+
 span {
   color: green;
 }
-
 
 #carroNuevo p {
   text-transform: uppercase;
   background-color: #2222222c;
   font-size: 1.4rem;
-    border-radius: .5rem;
-color: #e6e6e6;
+  border-radius: 0.5rem;
+  color: #e6e6e6;
 }
+
+/* FIN */

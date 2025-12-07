@@ -1,13 +1,12 @@
-"use strict";
+"use strict"; // para vernos mas mamones
 
 let autoActual;
 let busqueda;
 
-// funcion para formatear el precio
+// funcion para formatear el precio con comillas
 function agregarComas(valor) {
   return valor.toLocaleString();
 }
-
 // es una funcion que se utiliza como contructor
 function Auto(marca, modelo, color, anno, precio, titular) {
   // propiedades que identifican a cada instancia del cnstructor auto
@@ -40,29 +39,12 @@ Auto.prototype.Encender = function () {
 };
 
 // instancias de la clase o constructor Auto
-let camaro = new Auto(
-  "Chevrolet",
-  "Chevrolet Camaro ZL1 Coupe",
-  "Rojo",
-  2020,
-  50000,
-  "no"
-);
-let buggati = new Auto(
-  "Bugatti",
-  "Buggati Chiron",
-  "azul",
-  2016,
-  5000000,
-  "no"
-);
-let audi = new Auto("Audi", "Audi A3", "Plateado", 2013, 300000, "no");
 
 // forma larga y anticuada
 //let suburban = Object.create(buggati.prototype("Chevrolet","Suburban","Plateado",2025));
 
 // cada elemento dentro de instancias s un objeto
-let instancias = [camaro, buggati, audi];
+let instancias = [];
 
 function actualizarDatos(nombreAuto) {
   // find regresa la primer parametro que es true y undefined en cualquier otro caso
@@ -76,7 +58,6 @@ function actualizarDatos(nombreAuto) {
     "$" + agregarComas(busqueda.precio);
   autoActual = busqueda;
     document.querySelector('.eleccion_auto_actual').textContent = busqueda.modelo;
-
   console.log(busqueda);
 }
 
@@ -191,7 +172,7 @@ function agregarAuto() {
   let modelo = document.querySelector("#cmodel");
   let color = document.querySelector("#cColor");
   let fechaLanzamiento = document.querySelector("#cdate");
-  let precio = document.querySelector("#cprop");
+  let precio = document.querySelector("#cprice");
   let tieneDuenno = document.querySelector("#cprop");
 
   if (
@@ -202,15 +183,16 @@ function agregarAuto() {
     !extraerDato(precio) ||
     !extraerDato(tieneDuenno)
   ) {
-    alert("Debes de ingresar los valores solicitados.");
+    alert("Los campos no deben estar vacios.");
     return;
   } else {
+    let precioComas = extraerDato(precio); 
     let nuevo = new Auto(
       extraerDato(nombreAuto),
       extraerDato(modelo),
       extraerDato(color),
       extraerDato(fechaLanzamiento),
-      extraerDato(precio),
+      agregarComas(precioComas),
       extraerDato(tieneDuenno)
     );
     if (nuevo instanceof Auto) {
