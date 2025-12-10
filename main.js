@@ -184,6 +184,17 @@ function agregarAuto() {
     !extraerDato(tieneDuenno)
   ) {
     alert("Los campos no deben estar vacios.");
+    let elemento_campos = document.querySelectorAll('.campo_newcar'); 
+    elemento_campos.forEach((valor)=>{
+    let alerta = document.createElement("P");
+    alerta.setAttribute("class","campo_newcar_alerta");
+    alerta.textContent = "Campo Necesario";  
+    valor.after(alerta);
+    setTimeout(() => {
+    alerta.remove();
+    }, 4500);
+    });
+    
     return;
   } else {
     let precioComas = extraerDato(precio); 
@@ -208,14 +219,18 @@ document.querySelector(".autos").addEventListener("click", () => {
   cargarAutos();
 },{once:true});
 
+let enviar_mensaje = 0;
 let actualizarListacoches = document.querySelector(".autos");
-actualizarListacoches.addEventListener("click", () => {});
+actualizarListacoches.addEventListener("click", () => {
+    if (instancias.length == 0 && enviar_mensaje == 0){   
+      alert("No hay ningun coche disponible, considera agregar algunos o actualiza la pagina.");
+     }
+     enviar_mensaje +=1;
+});
 
 let autodialog = document.querySelector("#carroNuevo");
-let dialogAbrirDialogAuto = document
-  .querySelector("#abrirdialogauto")
-  .addEventListener("click", () => {
-    autodialog.style.display = "flex";
+let dialogAbrirDialogAuto = document.querySelector("#abrirdialogauto").addEventListener("click", () => {
+  autodialog.style.display = "flex";
     document.querySelectorAll("input").forEach((e) => {
       if (e) {
         e.value = "";

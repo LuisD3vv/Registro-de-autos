@@ -29,7 +29,7 @@
             <button class="boton" id="abrirdialogauto">AGREGAR AUTO</button>
             <dialog id="carroNuevo">
 
-              <p class="carroNuevo_parrafo">Ingresa los datos del nuevo Auto</p>
+              <p class="carroNuevo_parrafo">Datos del Auto</p>
               <div class="newCar">
               <div class="campo_newcar">
               <label for="cname">Marca </label>
@@ -50,17 +50,17 @@
               <label for="cprice">Precio</label>
               <input type="number" name="" id="cprice" autocomplete="off">
               </div>
-              <div class="campo_newcar"><label for="cprop">* En proceso</label>
+              <div class="campo_newcar"><label for="cprop">Titular</label>
               <input type="text" name="" id="cprop" autocomplete="off">
             </div>
-              <p class="declarative">*si el auto se encuentra en tramites actualmente, ya sea de normalizacion de documentos o matricula, en caso contrario colocar el nombre actual del propietario.</p>
+              <p class="declarative">*Si no hay titular, colocar 'en tramite'.</p>
             <div class="botones_newcar">
               <button id="agregarNuevoCoche" onclick="agregarAuto()">ACEPTAR</button>
               <button  id="cerrardialognuevo">CERRAR</button>
             </div>
             </div>
             </dialog>
-          </div>
+          </div> 
           <div class="eleccion">
             <p class="eleccion_auto_actual">Made by Lissandro</p>
             <label for="propietario"> Ingresa el nuevo propietario</label>
@@ -86,9 +86,9 @@
               <p>marca: <span class="automarca"></span></p>
               <p>modelo: <span class="automodelo"></span></p>
               <p>color: <span class="autocolor"></span></p>
-              <p>año: <span class="autoanno"></span></p>
+              <p>año de lanzamiento: <span class="autoanno"></span></p>
               <p>Precio: <span class="autoprecio"></span></p>
-              <p>propietario: <span class="autoprop"></span></p>
+              <p>propietario Actual: <span class="autoprop"></span></p>
             </div>
           </div>
         </div>

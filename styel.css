@@ -69,6 +69,8 @@ p {
 
 /* CAMPOS */
 .campo {
+    place-content:center;
+
   background-color: rgba(0, 0, 0, 0.63);
   box-shadow: 0 3px 2px 2px #222;
   flex: 1 1;
@@ -113,7 +115,7 @@ p {
   font-weight: bold;
   overflow-x: hidden;
   font-size: 1.5rem;
-  color: #4f116e;
+  color: gold;
   text-shadow: 1px 1px 1px #222;
   margin-bottom: -1rem;
   background-color: #2222226b;
@@ -180,7 +182,7 @@ details {
   width:100%;
 }
 details:nth-child(2) {
-  border-top: 0.3rem double grey;
+  border-top: 0.3rem solid grey;
 }
 details::-webkit-scrollbar {
   display: none;
@@ -192,7 +194,7 @@ details[open] {
   overflow-y: auto;
   transition: all ease-in 0.3s;
   border-radius: 0.5rem;
-  background-color: rgb(240, 128, 128);
+  background-color: #e6e6e63d;
   margin-bottom: 1rem;
 }
 
@@ -280,15 +282,26 @@ details[open]:nth-child(3) {
   flex-direction: column;
 }
 .detalles_coche p {
+  font-weight:bold;
   font-size: 1.5rem;
-  padding: 1rem;
-  background-color: #22222293;
+  padding: 1.5rem;
+    background-color: #2222226b;
+
+}
+.detalles_coche p:nth-child(1) {
+  border-top-left-radius:1rem;
+  border-top-right-radius:1rem;
+}
+.detalles_coche p:last-of-type {
+  border-bottom-left-radius:1rem;
+  border-bottom-right-radius:1rem;
 }
 .detalles_coche span {
   color: green;
 }
 .detalles_coche p:nth-child(odd) {
-  background-color: #2222224f;
+    color:#e6e6e6;
+  background-color: #22222236;
 }
 .boton_disponibles {
   width: 100%;
@@ -319,6 +332,7 @@ details[open]:nth-child(3) {
   padding: 1rem;
 }
 #carroNuevo {
+  flex-direction:column;
   margin-top: 4rem;
   height: 70rem;
 }
@@ -457,7 +471,7 @@ details[open]:nth-child(3) {
 
 dialog {
   flex-direction: column;
-  justify-content: space-between;
+  justify-content:space-evenly;
   overflow-y: auto;
   gap: 1rem;
   position: fixed; /* Fija la posición relativa a la ventana del navegador */
@@ -559,10 +573,18 @@ dialog::backdrop {
   display: flex;
   gap: 1rem;
 }
+.campo_newcar_alerta  {
+  text-align:left;
+  height:max-content;
+  padding:0;
+  font-size:1rem;
+  color:rgb(255,0,0) !important;
+  text-shadow:1px 1px 1px #222;
+  width:50%;
+}
 .campo_newcar {
-  flex: 1;
+  flex: 1 1;
   display: flex;
-  place-content: center;
   background-color: #2223;
   border-radius: 0.5rem;
   padding: 1rem;
@@ -592,11 +614,11 @@ dialog::backdrop {
   outline: none;
 }
 .carroNuevo_parrafo {
+  color:#e6e6e6;
+  background-color:#222;
   font-size: 1.5rem;
 }
-.declarative {
-  font-size: 1rem !important;
-}
+.declarative {font-size: 1.2rem !important;}
 .newCar input:focus {
   transition: all ease-in 0.1s;
   background-color:rgba(144, 238, 144, 0.315);
@@ -606,16 +628,6 @@ dialog::backdrop {
   border-radius: 0.5rem;
 }
 
-span {
-  color: green;
-}
-
-#carroNuevo p {
-  text-transform: uppercase;
-  background-color: #2222222c;
-  font-size: 1.4rem;
-  border-radius: 0.5rem;
-  color: #e6e6e6;
-}
+span {color: green;}
 
 /* FIN */
